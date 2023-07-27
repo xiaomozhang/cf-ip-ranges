@@ -1,4 +1,4 @@
-# CloudFlare IP Ranges
+# CloudFlare IP Range
 ## آخرین رنج‌های آی‌پی کلودفلر
 
 __گردآوری از طریق:__\
