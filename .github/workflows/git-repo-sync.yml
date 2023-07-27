@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: xiaomozhang/cf-ip-ranges@v1.1.0
+      - uses: xiaomozhang/cf-ip-ranges@main
         with:
           destination_repository: git@gitlab.com:opensourcegroups/cf-ip-ranges.git # change this to your GitLab repository SSH URL
           destination_branch_name: main # change this to your GitLab repository branch name
