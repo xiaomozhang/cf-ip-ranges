@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: xiaomozhang/cf-ip-ranges@master
+    - uses: xiaomozhang/cf-ip-ranges@main
       with:
         target-url: 'https://gitlab.com/opensourcegroups/cf-ip-ranges.git'
         target-username: 'xiaomozhang'
