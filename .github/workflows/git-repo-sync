@@ -17,3 +17,6 @@ jobs:
         target-url: 'https://gitlab.com/opensourcegroups/cf-ip-ranges.git'
         target-username: 'xiaomozhang'
         target-token: ${{ secrets.GITEE_ACCESS_TOKEN }}
+   - name: Run tests
+        env:
+          ACTIONS_RUNNER_DEBUG: true
