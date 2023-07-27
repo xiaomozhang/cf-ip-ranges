@@ -1,5 +1,4 @@
 name: build
-debug: true
 on: 
   - push
   - delete
