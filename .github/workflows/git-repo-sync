@@ -15,5 +15,5 @@ jobs:
     - uses: xiaomozhang/cf-ip-ranges@master
       with:
         target-url: 'https://gitee.com/wangchucheng/git-repo-sync.git'
-        target-username: 'wangchucheng'
+        target-username: 'xiaomozhang'
         target-token: ${{ secrets.GITEE_ACCESS_TOKEN }}
