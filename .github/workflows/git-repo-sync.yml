@@ -1,17 +1,14 @@
-name: build
-on: 
-  - push
-  - delete
+name: Sync GitHub to GitLab
+on:
+  push:
+    branches: [ main ]
 jobs:
   sync:
     runs-on: ubuntu-latest
-    name: Git Repo Sync
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - uses: xiaomozhang/cf-ip-ranges@main
-      with:
-        target-url: 'https://gitlab.com/opensourcegroups/cf-ip-ranges.git'
-        target-username: 'xiaomozhang'
-        target-token: ${{ secrets.GITEE_ACCESS_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: xiaomozhang/cf-ip-ranges@v1.1.0
+        with:
+          destination_repository: git@gitlab.com:opensourcegroups/cf-ip-ranges.git # change this to your GitLab repository SSH URL
+          destination_branch_name: main # change this to your GitLab repository branch name
+          destination_ssh_key: ${{ secrets.GITEE_ACCESS_TOKEN }} # change this to your GitHub secret name that contains the SSH key
