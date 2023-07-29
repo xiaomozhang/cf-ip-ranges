@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up GitLab CLI
-        uses: opensourcegroups/cf-ip-ranges@v1.0.1
+        uses: xiaomozhang/cf-ip-ranges@v1.0.1
         with:
           gitlab_host: ${{ secrets.GITLAB_HOST }}
           gitlab_token: ${{ secrets.GITLAB_TOKEN }}
