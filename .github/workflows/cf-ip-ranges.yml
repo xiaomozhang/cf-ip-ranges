@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Set up GitLab CLI
-        uses: opensourcegroups/cf-ip-ranges@main
         with:
           gitlab_host: ${{ secrets.GITLAB_HOST }}
           gitlab_token: ${{ secrets.GITLAB_TOKEN }}
