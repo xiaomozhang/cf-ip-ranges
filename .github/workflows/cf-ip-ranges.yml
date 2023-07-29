@@ -16,6 +16,8 @@ jobs:
         with:
           gitlab_host: ${{ secrets.GITLAB_HOST }}
           gitlab_token: ${{ secrets.GITLAB_TOKEN }}
+      - name: Set up GitLab CLI
+        uses: firepress-org/gitlab-cli-action@v1.0.1    
       - name: Sync to GitLab
         run: |
           git config --global user.name "${{ github.actor }}"
