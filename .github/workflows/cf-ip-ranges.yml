@@ -13,5 +13,5 @@ jobs:
       with:
         target_repo_url: ${{ secrets.GITLAB_HOST }}
         ssh_private_key: ${{ secrets.GITLAB_TOKEN }}
+        fetch-depth: 1
         force: true
-        fetch-depth: 0
