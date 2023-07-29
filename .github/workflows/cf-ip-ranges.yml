@@ -13,3 +13,4 @@ jobs:
       with:
         target_repo_url: ${{ secrets.GITLAB_HOST }}
         ssh_private_key: ${{ secrets.GITLAB_TOKEN }}
+        FORCE_PUSH: true
