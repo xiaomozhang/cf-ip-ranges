@@ -1,28 +1,15 @@
 name: Sync to GitLab
 on:
   push:
-    branches:
-      - main
   delete:
-    branches:
-      - main
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up GitLab CLI
-        uses: actions/gitlab@v2
-        with:
-          gitlab_host: ${{ secrets.GITLAB_HOST }}
-          gitlab_token: ${{ secrets.GITLAB_TOKEN }}
-      - name: Sync to GitLab
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git remote add gitlab ${{ secrets.GITLAB_REPO_URL }}
-          git push --force --tags gitlab ${{ github.ref }}
-          if [ "${{ github.event_name }}" = "delete" ]; then
-            git push --delete gitlab ${{ github.ref }}
-          fi
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Mirror to GitLab
+      uses: pixta-dev/repository-mirroring-action@v1
+      with:
+        target_repo_url: ${{ secrets.GITLAB_HOST }}
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
