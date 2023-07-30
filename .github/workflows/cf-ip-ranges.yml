@@ -8,10 +8,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with:
-       fetch-depth: 0
-    - name: Fetch all history # <-- add this step
-      run: git fetch --unshallow main
     - name: Mirror to GitLab
       uses: pixta-dev/repository-mirroring-action@v1
       with:
