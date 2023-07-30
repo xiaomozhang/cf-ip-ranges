@@ -13,6 +13,6 @@ jobs:
       with:
         target_repo_url: ${{ secrets.GITLAB_HOST }}
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        fetch-depth: 0
+        fetch-depth: 1
         force: true
         refs: refs/heads/main
